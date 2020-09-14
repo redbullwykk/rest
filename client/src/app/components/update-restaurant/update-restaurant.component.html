@@ -1,0 +1,30 @@
+<form (submit)="updateRestaurant()">
+    <mat-toolbar>
+        <button mat-icon-button type="button" (click)="goBackToHome()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <h4>Update Restaurant</h4>
+            <button mat-icon-button type="submit">
+                <mat-icon>check</mat-icon>
+            </button>
+      </mat-toolbar>
+    
+      <mat-card>
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput type="text" [(ngModel)]="restaurant_name" name="restaurant_name" value="{{restaurants[0]?.restaurant_name}}" (keyup)="userTypedInName($event)" class="form-control" [required]="requireModel">
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input matInput matInput [(ngModel)]="phone" type="text" name="phone" value="{{restaurants[0]?.phone}}" (keyup)="userTypedInPhone($event)" class="form-control">
+            </mat-form-field>
+            <br>
+            <br>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <textarea matInput type="text" [(ngModel)]="address" name="address" value="{{restaurants[0]?.address}}" (keyup)="userTypedInAddress($event)" class="form-control"></textarea>
+            </mat-form-field>
+      </mat-card>
+</form>

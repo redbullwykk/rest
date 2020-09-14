@@ -1,0 +1,16 @@
+mat-toolbar{
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+mat-card{
+    border-radius: 0%;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+h4{
+    margin:auto;
+}

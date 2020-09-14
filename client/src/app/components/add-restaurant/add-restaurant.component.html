@@ -1,0 +1,30 @@
+<form (submit)="addRestaurant()">
+<mat-toolbar>
+    <button mat-icon-button type="button" (click)="goBackToHome()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <h4>Add Restaurant</h4>
+        <button mat-icon-button type="submit">
+            <mat-icon>check</mat-icon>
+        </button>
+  </mat-toolbar>
+
+  <mat-card>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput type="text" [(ngModel)]="restaurant_name" name="restaurant_name" class="form-control" required>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+            <mat-label>Phone Numbers</mat-label>
+            <input matInput matInput type="text" [(ngModel)]="phone" name="phone" class="form-control">
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field>
+            <mat-label>Address</mat-label>
+            <textarea matInput type="text" [(ngModel)]="address" name="address" class="form-control"></textarea>
+        </mat-form-field>
+  </mat-card>
+  </form>

@@ -1,0 +1,40 @@
+mat-panel-description, span{
+  display: block;
+  margin: 20px 0px 20px 0px;
+  text-align: left;
+}
+
+mat-accordion{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label{
+    display: inline-block;
+}
+
+mat-expansion-panel{
+    margin-bottom: 5px;
+}
+
+mat-toolbar{
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+mat-card{
+    border-radius: 0%;
+}
+
+form{
+    width: 100%;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+h4{
+    margin: auto;
+}

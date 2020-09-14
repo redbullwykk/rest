@@ -1,0 +1,51 @@
+<mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>reorder</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>account_circle</mat-icon>
+        Account
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        Log Out
+      </button>
+    </mat-menu>
+    <h4>Kyone Tine</h4>
+    <button mat-icon-button (click)="addRestaurant()">
+      <mat-icon>add</mat-icon>
+    </button>
+</mat-toolbar>
+  
+  <mat-card>
+    <form>
+      <mat-form-field>
+        <mat-label>Search Restaurant</mat-label>
+        <input matInput placeholder="Restaurant Name" type="text" name="enteredValue" [(ngModel)]="enteredValue" (input)="search($event.target.value)">
+        <button mat-button matSuffix mat-icon-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+  </mat-card>
+
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let restaurant of sortedName">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{restaurant.restaurant_name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-panel-description>
+        <span>Phone:<br>
+            {{restaurant.phone}} 
+        </span>
+        <span>Address:<br>
+            {{restaurant.address}}
+        </span>   
+      </mat-panel-description>
+        <button mat-raised-button color="primary" (click)="updateRestaurant(restaurant._id)" style="margin-right: 10px">Edit</button>
+        <button mat-raised-button type="button" (click)="deleteRestaurant(restaurant._id)" color="accent">Delete</button>
+    </mat-expansion-panel>
+  </mat-accordion>
